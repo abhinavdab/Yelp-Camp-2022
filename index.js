@@ -13,6 +13,7 @@ const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
+const PORT = 3000;
 
 const userRoutes = require("./routes/users");
 const campgroundRoutes = require("./routes/campgrounds");
@@ -89,6 +90,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 //index file to upload on cyclic
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Serving on port 3000");
 });
